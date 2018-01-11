@@ -1,0 +1,12 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    
+login_route:
+    path: /login
+
+register_route:
+    path: /register
+
+home_page:
+    path: /home

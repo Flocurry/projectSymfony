@@ -1,0 +1,19 @@
+# Formulaire de registration/login
+Firstname: Prénom
+Enter your Firstname: Tape ton prénom
+Lastname: Nom
+Enter your Lastname: Tape ton nom
+Username: Utilisateur
+Enter your Username: Tape ton nom d'utilisateur
+Email: Email
+Enter your Email: Tape ton email
+Password: Mot de passe
+Enter your Password: Tape ton mot de passe
+Register: S'enregistrer
+Login: S'identifier
+Registration failed: Echec d'enregistrement
+Registration succed: Enregistrement avec succès
+The username already exists: Ce nom d'utilisateur existe déjà
+The email already exists: Cet email existe déjà
+The password already exists: Ce mot de passe existe déjà
+This user doesn't exists: Cet utilisateur n'existe pas

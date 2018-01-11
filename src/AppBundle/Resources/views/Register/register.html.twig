@@ -1,0 +1,107 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="main-login main-center">
+			{{ form_start(form, {"attr":{"class":"form-horizontal", "data-toggle":"validator"}}) }}
+			{% if registerDatas is not empty %}
+				{% if registerDatas.state == true %}
+					<div class="alert alert-success">
+						<strong>{{registerDatas.message}}!</strong>
+					</div>
+				{% endif %}
+				{% if registerDatas.state == false %}
+					<div class="alert alert-danger">
+						<strong>{{registerDatas.message}}!</strong>
+					</div>
+				{% endif %}
+			{% endif %}
+			<div class="form-group">
+				{{ form_label(form.firstname) }}
+				<div class="cols-sm-10">
+					<div class ="input-group">
+						<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+						{{ form_widget(form.firstname) }}
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.lastname) }}
+				<div class="cols-sm-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+						{{ form_widget(form.lastname) }}
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.username) }}
+				<div class="cols-sm-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+						{{ form_widget(form.username) }}
+					</div>
+					{% if errors.username is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								<li>
+									{{ errors.username|trans }}
+								</li>
+							</ul>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.email) }}
+				<div class="cols-sm-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+						{{ form_widget(form.email) }}
+					</div>
+					{% if errors.email is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								<li>
+									{{ errors.email|trans }}
+								</li>
+							</ul>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_label(form.password) }}
+				<div class="cols-sm-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+						{{ form_widget(form.password) }}
+					</div>
+					{% if errors.password is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								<li>
+									{{ errors.password|trans }}
+								</li>
+							</ul>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="form-group">
+				{{ form_widget(form.save) }}
+			</div>
+			<div class="login-register">
+				<a href="{{ path('login_route') }}">{{loginLibelle}}</a>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

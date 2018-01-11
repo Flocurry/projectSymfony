@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	{{parent()}}
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="main-login main-center">
+			<form class="form-horizontal" name="appbundle_user" action="{{action}}" method="POST">
+				{% if loginErrors is not empty %}
+					<div class="alert alert-danger">
+						<strong>{{loginErrors.message}}!</strong>
+					</div>
+				{% endif %}
+				<div class="form-group">
+					{{ form_label(form.username) }}
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+							{{ form_widget(form.username) }}
+						</div>
+						{% if errors.username is defined %}
+							<div class="alert alert-danger">
+								<ul>
+									<li>
+										{{ errors.username|trans }}
+									</li>
+								</ul>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_label(form.password) }}
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+							{{ form_widget(form.password) }}
+						</div>
+						{% if errors.password is defined %}
+							<div class="alert alert-danger">
+								<ul>
+									<li>
+										{{ errors.password|trans }}
+									</li>
+								</ul>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+				<div class="form-group">
+					{{ form_widget(form.login) }}
+				</div>
+				<div class="login-register">
+					<a href="{{ path('register_route') }}">{{registerLibelle}}</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}
