@@ -10,3 +10,6 @@ register_route:
 
 home_page:
     path: /home
+    
+users_route:
+    path: /users

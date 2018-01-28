@@ -17,3 +17,8 @@ The username already exists: Ce nom d'utilisateur existe déjà
 The email already exists: Cet email existe déjà
 The password already exists: Ce mot de passe existe déjà
 This user doesn't exists: Cet utilisateur n'existe pas
+
+# Menu navBar
+HOME: ACCUEIL
+USERS: UTILISATEURS
+Hello: Bonjour
